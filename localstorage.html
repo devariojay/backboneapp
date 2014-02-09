@@ -15,26 +15,6 @@
 		<button id="reset">reset background</button>
 	</section>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var bg = localStorage.bgcolor;
-			var defaultColor = "white";
-			if(localStorage.getItem("bgcolor") === null){
-				$("#list").val("white");
-			}else{
-				$("#list").val(bg); 
-				$("body").css("background-color", bg);
-			}
-			$("#submitbtn").click(function(){
-				localStorage.bgcolor = $("#list").val();
-				$("body").css("background-color", localStorage.bgcolor);
-			});
-			$("#reset").click(function(){
-				localStorage.removeItem("bgcolor");
-				$("body").css("background-color", defaultColor);
-				$("#list").val(defaultColor);
-			});	
-		});
-	</script>
+	<script src="ls.js"></script>
 </body>
 </html>
