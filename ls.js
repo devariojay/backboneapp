@@ -1,19 +1,19 @@
 $(document).ready(function(){
-	var bg = localStorage.bgcolor;
-	var defaultColor = "white";
-	if(localStorage.getItem("bgcolor") === null){
-		$("#list").val("white");
+	var bg = localStorage.bgimage;
+	var defaultImage = "bg1.jpg";
+	if(localStorage.getItem("bgimage") === null){
+		$("#list").val("bg1.jpg");
 	}else{
 		$("#list").val(bg); 
-		$("body").css("background-color", bg);
+		$("body").css("background-image", "url(/"+bg+")");
 	}
 	$("#list").change(function(){
-		localStorage.bgcolor = $("#list").val();
-		$("body").css("background-color", localStorage.bgcolor);
+		localStorage.bgimage = $("#list").val();
+		$("body").css("background-image", "url(/"+localStorage.bgimage+")");
 	});
 	$("#reset").click(function(){
-		localStorage.removeItem("bgcolor");
-		$("body").css("background-color", defaultColor);
-		$("#list").val(defaultColor);
+		localStorage.removeItem("bgimage");
+		$("body").css("background-image", "url(/"+defaultImage+")");
+		$("#list").val(defaultImage);
 	});	
 });
