@@ -7,7 +7,7 @@ $(document).ready(function(){
 		$("#list").val(bg); 
 		$("body").css("background-color", bg);
 	}
-	$("#submitbtn").click(function(){
+	$("#list").change(function(){
 		localStorage.bgcolor = $("#list").val();
 		$("body").css("background-color", localStorage.bgcolor);
 	});
